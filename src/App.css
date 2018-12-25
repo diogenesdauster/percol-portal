@@ -1,32 +1,149 @@
-.App {
-  text-align: center;
+.sidebar {
+  margin: 0;
+  padding: 0;
+  z-index: 1;
+  width: 250px;
+  background-color: #18202c;
+  position: fixed;
+  height: 100%;
+  color: white;
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#navbar {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  flex-direction: row;
+  box-sizing: border-box;
+  width: "100%";
+  z-index: 1100;
+  position: sticky;
+  top: 0;
+  left: "auto";
+  right: 0;
+  background-color: #64e2e2;
+}
+
+#navbar a {
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+#navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+#navbar a.active {
+  background-color: #4caf50;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.header {
+  width: 100%;
+  background-color: #64e2e2;
+  padding-top: 40px;
+  color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  text-align: left;
+  position: static;
+  z-index: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.header h2 {
+  padding-left: 10px;
+}
+
+.sidebar a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.main {
+  margin-left: 250px;
+  height: 640px;
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+  overflow-x: hidden;
+}
+
+.content {
+  padding-left: 20px;
+}
+
+.footer {
+  display: flex;
+  z-index: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #e0e0e0;
+  text-align: center;
+  box-shadow: 4px 4px 8px 4px rgba(0.2, 0, 0, 0.2);
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+
+.footer ul li {
+  list-style: none;
+}
+
+.footer ul {
+  display: inline-flex;
+}
+.footer ul {
+  padding: 0px;
+}
+
+.footer li a {
+  padding: 10px;
+  font-size: 2em;
+}
+
+.blog {
+  padding-left: 250px;
+  flex: 1;
+}
+
+.blog img {
+  width: 100%;
+}
+
+.redes-sociais {
+  flex: 1;
+}
+
+.conheca-nossa-loja {
+  flex: 1;
+}
+
+@media screen and (max-width: 700px) {
+  .sidebar {
+    margin-left: -250px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .blog {
+    padding-left: 0px;
+  }
+
+  .main {
+    margin-left: 0px;
+  }
+  #navbar {
+    padding-left: 0px;
+    width: 100%;
+    font-size: 0.7em;
+  }
+
+  .sidebar a {
+    font-size: 18px;
   }
 }
